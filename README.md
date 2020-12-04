@@ -2,7 +2,7 @@
 
 <img src="https://developer.nexmo.com/assets/images/Vonage_Nexmo.svg" height="48px" alt="Nexmo is now known as Vonage" />
 
-This is a Swift project that uses [Vapor](vapor.codes) to create a website displays data that is posted to it. It can be used as the [Event URL](https://developer.nexmo.com/voice/voice-api/webhook-reference#event-webhook) for your voice Vonage application.
+This is a Swift project that uses [Vapor](vapor.codes) to create a website displays data that is posted to it. It can be used as the [Event URL](https://developer.nexmo.com/voice/voice-api/webhook-reference#event-webhook) for your voice Vonage application. It is currently deployed: https://vonage-events.herokuapp.com
 
 ## Welcome to Vonage
 
