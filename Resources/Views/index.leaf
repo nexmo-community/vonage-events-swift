@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-
-  <title>#(title)</title>
+  <link rel="stylesheet" href="/styles/style.css">
+  <title>Vonage events</title>
 </head>
 
 <body>
-  <h1>#(title)</h1>
+  <h1>Go to url/YourAppId to view events</h1>
 </body>
 </html>

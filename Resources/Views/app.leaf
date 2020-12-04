@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/styles/style.css">
+  <script defer src="/scripts/app.js"></script>
+  <title>Vonage Events - #(appId)</title>
+</head>
+<body>
+  <h1>Incoming events</h1>
+  <p>Events for App ID: #(appId)</p>
+  
+  
+  <ul id="jsonList"></ul>
+</body>
+</html>
