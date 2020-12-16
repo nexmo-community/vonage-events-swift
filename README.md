@@ -10,8 +10,11 @@ If you're new to Vonage, you can [sign up for a Vonage API account](https://dash
 
 ## Running the project
 
-After cloning the project to your machine, open it in Xcode. Build and run (CMD + R) and the server will be accessible on port 8080.
+Open it in Xcode by running vapor xcode and wait for Xcode to download the packages.
 
+Set a custom working directory for your project. Go to Product > Scheme > Edit Scheme... and set the working directory to the root folder of your project.
+
+Once done, build and run (CMD + R) and the server will be accessible on port 8080.
 
 ## Getting Help
 
