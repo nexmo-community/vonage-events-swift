@@ -3,7 +3,8 @@ const appId = window.location.pathname;
 const ws = new WebSocket('wss://'+ baseURL+ '/ws/' + appId);
 
 ws.onopen = () => {
-  console.log('Now connected');
+    console.log('Now connected');
+    fetch(window.location.href + '/clear', { method: 'post'})
 };
 
 ws.onmessage = (event) => {

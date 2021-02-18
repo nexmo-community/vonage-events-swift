@@ -10,6 +10,12 @@ func routes(_ app: Application) throws {
     app.get(":appId") { req -> EventLoopFuture<Vapor.View> in
         return req.view.render("app", ["appId": req.parameters.get("appId")!])
     }
+    
+    app.post(":appId", "clear") { (req) -> String in
+        let appId = req.parameters.get("appId")!
+        socketController.clearBacklog(for: appId)
+        return appId
+    }
 
     app.webSocket("ws",":appId") { req, ws in
         let appId = req.parameters.get("appId")!

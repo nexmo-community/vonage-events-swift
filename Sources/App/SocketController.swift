@@ -24,17 +24,23 @@ final class SocketController {
 
     func sendSocketMessage(with appIdString: String, message: String) {
         if let socket = sockets.first(where: { $0.appId.description == appIdString }) {
+            clearBacklog(for: appIdString)
+            socket.ws.send(message)
+        } else {
+            var backlogMessages: [String] = backlog[appIdString] ?? []
+            backlogMessages.append(message)
+            backlog[appIdString] = backlogMessages
+        }
+    }
+    
+    func clearBacklog(for appIdString: String) {
+        if let socket = sockets.first(where: { $0.appId.description == appIdString }) {
             if let backlogMessages = backlog[appIdString] {
                 for backlogMessage in backlogMessages {
                     socket.ws.send(backlogMessage)
                     backlog[appIdString] = nil
                 }
             }
-            socket.ws.send(message)
-        } else {
-            var backlogMessages: [String] = backlog[appIdString] ?? []
-            backlogMessages.append(message)
-            backlog[appIdString] = backlogMessages
         }
     }
 }
