@@ -8,6 +8,12 @@ This is a Swift project that uses [Vapor](vapor.codes) to create a website displ
 
 If you're new to Vonage, you can [sign up for a Vonage API account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=github&utm_campaign=github.com/nexmo-community/swiftui-make-phone-call) and get some free credit to get you started.
 
+## Overview
+
+When the index page at the `url/YOUR_APP_ID` (e.g. `vonage-events.herokuapp.com/1c1688de-03e2-460b-b4de-4b0dbc7d2008`) is loaded, with a GET request, it opens a websocket to the server. Any JSON sent via a HTTP POST request to the same url will sent over the websocket and displayed on the index page without reload. 
+
+If the index page is not open, JSON sent to the server is kept and processed once the page loads.
+
 ## Running the project
 
 Open it in Xcode by running vapor xcode and wait for Xcode to download the packages.
