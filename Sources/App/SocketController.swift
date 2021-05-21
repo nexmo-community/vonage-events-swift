@@ -24,7 +24,10 @@ final class SocketController {
 
     func sendSocketMessage(with appIdString: String, message: String) {
         if let socket = sockets.first(where: { $0.appId.description == appIdString }) {
-            clearBacklog(for: appIdString)
+            if let backlogForApp = backlog[appIdString],
+               backlogForApp.isEmpty {
+                clearBacklog(for: appIdString)
+            }
             socket.ws.send(message)
         } else {
             var backlogMessages: [String] = backlog[appIdString] ?? []
